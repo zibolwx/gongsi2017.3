@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/form.js" charset="utf-8"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header">
+        <div class="middle clear">
+            <div class="logo fl"><img src="images/website-logo.png" alt="logo"></div>
+            <div class="nav fl">
+                <ul class="clear">
+                    <li class="nav_action"><a href="##">首页</a></li>
+                    <li><a href="##">咨询</a></li>
+                    <li><a href="##">投资</a></li>
+                    <li style="width: 56px;"><a href="##">大数据</a></li>
+                    <li style="width: 74px;"><a href="##">小镇建设</a></li>
+                    <li style="width: 74px;"><a href="##">小镇风采</a></li>
+                    <li style="width: 74px;"><a href="##">小镇招商</a></li>
+                </ul>
+            </div>
+            <div class="zc fr">
+                <div class="weixin fl">
+                    <i class="icon iconfont icon-weixin"></i>
+                    <p>公众号</p>
+                </div>
+                <div class="dengru btn_login fl" id="btn_login">
+                    <i class="icon iconfont icon-denglu"></i>
+                    <p>登入</p>
+                </div>
+                <div class="zhuce btn_zhuce fl">
+                    <i class="icon iconfont icon-zhuce"></i>
+                    <p>注册</p>
+                </div>
+                <div class="ewm"><img src="images/download.jpg" width="60" height="60" alt="二维码"></div>
+                <script>
+                    var ewmBox=document.getElementsByClassName('weixin')[0];
+                    var ewmImg=document.getElementsByClassName('ewm')[0];
+                    ewm(ewmBox,ewmImg);
+                </script>
+            </div>
+        </div>
+        <!--登入注册表单部分开始-->
+        <div id="mask"></div>     <!-- 半透明遮罩层 -->
+        <div id="login">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎登录特色小镇网！</h3>
+            </div>
+            <!--登入表单开始-->
+            <div class="login_form">
+                <form action="" method="post" class="bootstrap-frm"  onsubmit="return sb1();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone">
+                                <span class="font-red" id="phone_ts">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima">
+                                <span class="font-red" id="mima_ts">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li class="last">
+                                <span class="use-mail-register">
+                                    <input type="checkbox" id="ck_rmbUser">
+                                    <span class="memory">记住密码</span>
+                                </span>
+
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="登录账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--登入表单结束-->
+
+        </div>
+        <!--登入注册表单部分结束-->
+        <!--注册表单开始-->
+        <div id="zhuce">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎注册特色小镇网！</h3>
+            </div>
+            <!--注册表单开始-->
+            <div class="login_form">
+                <form action="" method="post"  class="bootstrap-frm"  onsubmit="return sb2();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone2">
+                                <span class="font-red" id="phone_ts2">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima2">
+                                <span class="font-red" id="mima_ts2">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="确认密码" id="mima3">
+                                <span class="font-red" id="mima_ts3">两次密码输入不一致</span>
+                            </li>
+                            <li class="my-identify">
+                                <div>我的身份:</div>
+                                <p>
+                                    <img src="images/reg_xzf1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_xzf2.png" class="identify-img2" alt="" style="display: none;">
+                                    <b>小镇方</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_tzr1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_tzr2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>投资人</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_yk1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_yk2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>游客</b>
+                                </p>
+                            </li>
+                            <li class="captcha">
+                                <img src="images/bd_yzm.png" alt="">
+                                <input type="text" placeholder="验证码" class="yanzheng">
+                                <input type="button" class="captcha-button click-border" value="点击获取">
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="注册账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--注册表单结束-->
+        </div>
+        <!--注册表单结束-->
+        <!--反馈表单开始-->
+        <div class="quesform" id="fankui">
+            <div class="questitle clear">
+                <span>反馈&建议</span>
+                <p id="close" class="close"><img src="images/close.png" alt="关闭"></p>
+            </div>
+            <form action="" class="fankui_form" method="post" onsubmit="return sb3();">
+                <div class="queserr"><span id="fk_ts">账号不能为空</span></div>
+                <div class="clear">
+                    <div><span>*</span>您的姓名：</div>
+                    <input type="text" id="name" placeholder="输入您的姓名">
+                </div>
+                <div class="clear">
+                    <div><span>*</span>联系方式：</div>
+                    <input type="text" id="lxfs" placeholder="请输入联系方式">
+                </div>
+                <div class="clear">
+                    <div>反馈意见：</div>
+                    <textarea placeholder="请在这里填写您的反馈和建议"></textarea>
+                </div>
+                <div class="fk_tijiao"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+        <!--反馈表单结束-->
+    </div>
+
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="i_body" style="background-color: rgb(246, 245, 250);">
+    <!--内页头图部分开始-->
+    <div class="nei_top_img">
+        <div class="invbannerbx clear">
+            <div>
+                <div>招商引资总额（元）</div>
+                <div>4618.73亿</div>
+            </div>
+            <div>
+                <div>正在招商项目（个）</div>
+                <div>215个</div>
+            </div>
+            <div>
+                <div>招商成功项目（个）</div>
+                <div>168个</div>
+            </div>
+            <div>
+                <div>投资运营机构（家）</div>
+                <div>6446家</div>
+            </div>
+        </div>
+    </div>
+    <!--内页头图部分结束-->
+    <!--投资页面内容部分开始-->
+    <div class="tz_nr middle clear">
+        <div class="tz_left fl">
+            <div class="inv_left">
+                <div class="inv_filet more_filet_status">
+                    <div class="inv_filet_row">
+                        <span>合作方式：</span>
+                        <a href="##" class="inv_active">全部</a>
+                        <a href="##">PPP</a>
+                        <a href="##">BT</a>
+                        <a href="##">运营服务</a>
+                        <a href="##">独资</a>
+                    </div>
+                    <div class="inv_filet_row">
+                        <span>项目类别：</span>
+                        <a href="##" class="inv_active">全部</a>
+                        <a href="##">综合配套</a>
+                        <a href="##">相关产业</a>
+                    </div>
+                    <div class="inv_filet_row">
+                        <span>项目金额：</span>
+                        <a href="##" class="inv_active">全部</a>
+                        <a href="##">5000万（含）以下</a>
+                        <a href="##">5000万-1亿（含）</a>
+                        <a href="##">1亿-3亿（含）</a>
+                        <a href="##">3亿-5亿（含）</a>
+                        <a href="##">5亿以上</a>
+                    </div>
+                    <div class="inv_filet_row">
+                        <span>项目位置：</span>
+                        <a href="##" class="inv_active">全部</a>
+                        <a href="##">舟山市</a>
+                        <a href="##">杭州市</a>
+                        <a href="##">湖州市</a>
+                    </div>
+                    <div class="inv_filet_row">
+                        <span>项目级别：</span>
+                        <a href="##" class="inv_active">全部</a>
+                        <a href="##">地块</a>
+                    </div>
+                </div>
+                <div class="inv_more">
+                    <span id="btn_sq">展开<i class="icon iconfont icon-dingbu"></i></span>
+                </div>
+            </div>
+            <div class="inv_filet_box">
+                <ul>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img1.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img2.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img3.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img4.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img5.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img6.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img7.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img7.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img7.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img8.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                </ul>
+            </div>
+            <!--不登入-->
+            <div class="inv_mock">
+                <div>亲，小镇君告诉你个秘密，登录后可以查看更多数据哦</div>
+                <div><span>立即登入</span><span>免费注册</span></div>
+            </div>
+            <!--不登入-->
+            <!--登入-->
+           <!-- <div class="inv_filet_box">
+                <ul>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img1.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img2.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="tz_img fl"><img src="images/tz_img3.jpg" alt="投资"></div>
+                        <div class="tz_wz fr">
+                            <div class="tz_wz_bt clear">
+                                <span class="inv_box_title fl">塑机螺杆检测中心</span>
+                                <span class="rz fl">已认证</span>
+                                <div class="f_r fr">
+                                    <span><i class="icon iconfont icon-dingwei"></i></span>
+                                    <span>舟山市</span>
+                                    <span style="margin-left: 20px;"><i class="icon iconfont icon-shijian"></i></span>
+                                    <span>2017-01-23</span>
+                                </div>
+                            </div>
+                            <p>建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使用提供检
+                                测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量评价、质量风险预
+                                警技术支持、标准咨询、质量认证、计量服务等服务。</p>
+                            <div class="inv_box_bottom clear">
+                                <div>
+                                    <div>项目单位</div>
+                                    <div>浙江舟山群岛新区金塘管理委员会</div>
+                                </div>
+                                <div>
+                                    <div>项目金额</div>
+                                    <div>未知</div>
+                                </div>
+                                <div>
+                                    <div>合作方式</div>
+                                    <div>运营服务</div>
+                                </div>
+                                <div>
+                                    <div>所属领域</div>
+                                    <div>制造产业</div>
+                                </div>
+                                <div>
+                                    <div>意向机构</div>
+                                    <div>未知</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </a></li>
+                </ul>
+            </div>-->
+            <!--登入-->
+
+        </div>
+        <div class="tz_right fr">
+            <div class="inv_right_title"><span>投资运营机构</span><a href="##">查看更多</a></div>
+            <div class="tz_right_list">
+                <ul>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img2.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img3.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img2.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img3.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img2.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img3.png" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <img src="images/yyjg_img1.jpg" alt="运营机构">
+                        <span>颐高集团</span>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--投资页面内容部分结束-->
+</div>
+<!--footer部分开始-->
+<footer>
+    <div class="footer">
+        <div class="middle clear">
+            <div class="footer_left fl">
+                <div class="footer_nav">
+                    <a href="##">关于我们</a>
+                    <a href="##">友情链接</a>
+                    <a href="##">网站律师</a>
+                    <a href="##">免责申明</a>
+                    <a href="##">专家团队</a>
+                    <a href="##">网站地图</a>
+                </div>
+                <div class="footer_bq">
+                    <p>Copyright © 2015 知略科技. All rights reserved.</p>
+                    <p><a href="javascript:void (0);">浙ICP备16027131号</a></p>
+                </div>
+            </div>
+            <div class="footer_right fr">
+                <img src="images/footer-scan-weixin.png" width="60" height="60" alt="二维码">
+                <p>扫描关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="xuanfu">
+        <div class="xf_phone xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-phone"></i></div>
+            <div class="xf_phone_wz">联系<br>方式</div>
+            <div class="xf_phone_img"><img src="images/lxfs.png" alt=""></div>
+        </div>
+        <div class="xf_qs xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-question"></i></div>
+            <div class="xf_phone_wz">问题<br>反馈</div>
+        </div>
+        <div class="xf_gotop xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-dingbu"></i></div>
+            <div class="xf_phone_wz">回到<br>顶部</div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+<!--主体部分结束-->
+<!--js代码调用开始-->
+<script>
+    $(document).ready(function() {
+        var aLogin=document.getElementsByClassName('btn_login');
+        var aZhuce=document.getElementsByClassName('btn_zhuce');
+        var fankui=document.getElementsByClassName('xf_qs')[0];
+
+        for(var i=0;i<aLogin.length;i++){
+            aLogin[i].onclick=function () {
+                openDialog('login', 'login_close');
+            };
+        }
+        for(var j=0;j<aZhuce.length;j++){
+            aZhuce[j].onclick=function () {
+                openDialog('zhuce', 'login_close');
+            };
+        }
+        fankui.onclick=function () {
+            openDialog('fankui', 'close');
+        };
+        aZhuceJs();
+
+        xuanfu();
+        zhankai();
+    });
+</script>
+<!--js代码调用结束-->
+</body>
+</html>

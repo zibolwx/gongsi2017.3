@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header_top">
+        <div class="middle clear">
+            <div class="header_hello fl">咨询电话：0533-6721217</div>
+            <div class="header_dr_zc fr">欢迎来到山东商祺! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <a href="javascript:void(0);" id="btnLogin">登录</a> 丨 <a href="javascript:void(0);" id="btnsignup">注册</a></div>
+        </div>
+    </div>
+    <div id="mask"></div>     <!-- 半透明遮罩层 -->
+    <!--登入界面开始-->
+    <div id="login" class="clear">
+        <div class="login_left fl">
+            <form action="" class="login_form">
+                <label class="clear">
+                    <span>手机号码</span>
+                    <input type="text" class="shuru">
+                </label>
+                <label class="clear">
+                    <span>密码</span>
+                    <input type="text" class="shuru">
+                </label>
+                <div class="login_wm"><a href="javascript:void(0);" id="gm_link">忘记密码？</a></div>
+                <label class="clear">
+                    <input type="submit" class="btn2">
+                </label>
+            </form>
+        </div>
+        <div class="login_fr fr">
+            <span>还没有账号？</span><br>
+            <a href="javascript:void (0);" id="ljzc">立即注册>></a>
+            <div class="login_close">
+                <a href="javascript:void (0);"><img src="images/close.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--登入界面结束-->
+    <!--注册界面部分开始-->
+    <div id="signup" class="clear">
+        <div class="signup_fl fl">
+            <form action="" class="sigup_form">
+                <label>
+                    <input type="text" placeholder="手机号码" class="shuru1">
+                </label>
+                <label class="yzm clear">
+                    <input type="text" placeholder="验证码" >
+                    <div><img src="images/yzm.png" alt=""></div>
+                    <a href="javascript:void (0);"><img src="images/shuaxin.png" alt="刷新"></a>
+                </label>
+                <label class="dxyz clear">
+                    <input type="text" placeholder="短信验证码">
+                    <a href="javascript:void (0);">点击获取</a>
+                </label>
+                <label>
+                    <input type="text" placeholder="常用邮箱" class="shuru1">
+                </label>
+                <label>
+                    <input type="text"  placeholder="姓名/称呼" class="shuru1">
+                </label>
+                <label>
+                    <input type="text"  placeholder="设置密码" class="shuru1">
+                </label>
+                <label>
+                    <input type="submit" value="立即注册" class="btn2">
+                </label>
+            </form>
+        </div>
+        <div class="signup_fr fr">
+            <span>已有账号？</span><br>
+            <a href="javascript:void (0);" id="zjdl">直接登入>></a>
+            <div class="login_close">
+                <a href="javascript:void (0);"><img src="images/close.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--注册界面部分结束-->
+    <!--更改密码界面开始-->
+    <div id="gm">
+        <div class="close"><a href="javascript:void (0);"><img src="images/close.png" alt=""></a></div>
+        <div class="gm_bt clear">
+            <a href="javascript:void (0)" class="on">输入手机号</a>
+            <a href="javascript:void (0)">设置新密码</a>
+            <a href="javascript:void (0)">完成</a>
+        </div>
+        <div class="gm_bd">
+            <ul>
+                <li style="display: block;">
+                    <form action="" class="form_gm1">
+                        <label>
+                            <input type="text" class="gm_sj" placeholder="手机号码">
+                        </label>
+                        <label class="gm_yzm clear">
+                            <input type="text" placeholder="验证码">
+                            <div><img src="images/yzm.png" alt=""></div>
+                            <a href="javascript:void (0);"><img src="images/shuaxin.png" alt="刷新"></a>
+                        </label>
+                        <label class="gm_dxyzm clear">
+                            <input type="text" placeholder="短信验证码">
+                            <a href="##">点击获取</a>
+                        </label>
+                        <label class="gm_tj">
+                            <input type="submit" value="下一步">
+                        </label>
+
+                    </form>
+                </li>
+                <li>
+                    <form action="" class="form_gm2">
+                        <label>
+                            <input type="text" class="gm_sj" placeholder="手机号码">
+                        </label>
+                        <label>
+                            <input type="text" class="gm_sj" placeholder="确认密码">
+                        </label>
+                        <label class="gm_tj">
+                            <input type="submit" value="下一步">
+                        </label>
+                    </form>
+                </li>
+                <li>
+                    <div class="xgcg">
+                        <a href="javascript:void (0);" id="qudengru">去登入</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <!--更改密码界面结束-->
+    <div class="middle clear">
+        <div class="header_logo fl"><a href="javascript:viod(0);"><img src="images/logo.png" alt="logo"></a></div>
+        <div class="header_nav fr">
+            <ul class="clear">
+                <li class="on"><a href="##">网站首页</a></li>
+                <li><a href="##">公司简介</a></li>
+                <li><a href="##">投资房产</a></li>
+                <li><a href="##">刚需房产</a></li>
+                <li><a href="##">新闻动态</a></li>
+                <li><a href="##">在线留言</a></li>
+                <li><a href="##">联系我们</a></li>
+                <li><a href="##">贷款咨询</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="fg"></div>
+<div class="n_body">
+    <!--投资头部开始-->
+    <section>
+        <!--当前位置部分开始-->
+        <div class="middle"> <div class="nei_dqwz">当前位置：<a href="##">首页</a>><a href="##">刚需房产</a>><a href="##">宏程·国际广场</a></div></div>
+        <!--当前位置部分结束-->
+        <div class="tz_top middle">
+            <div class="tz_top_bt">
+                <a href="##" class="on">刚需房产</a>
+                <a href="##">投资房产</a>
+            </div>
+        </div>
+    </section>
+    <!--投资头部结束-->
+    <!--产品展示部分开始-->
+    <section>
+        <div class="middle">
+            <div class="nei_cpzs clear">
+                <div class="nei_cpzs_tab fl">
+                    <div class="mod18Box">
+                        <div class="mod18">
+                            <span id="prev" class="btn prev" style="display: none;"></span>
+                            <span id="next" class="btn next" style="display: none;"></span>
+                            <span id="prevTop" class="btn prev"></span>
+                            <span id="nextTop" class="btn next"></span>
+                            <div id="picBox" class="picBox">
+                                <ul class="cf">
+                                    <li>
+                                        <a href="##" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank" ><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank"><img width="212" height="176" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="##" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                    <li>
+                                        <a href="http://sc.chinaz.com/" target="_blank"><img width="467" height="342" src="images/xq_tp_da.png" alt="" /></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="listBox" class="listBox">
+                                <ul class="cf">
+                                    <li class="on"><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                    <li><i class="arr2"></i><img width="109" height="80" src="images/xq_tp_xiao.png" alt="心壁纸" /></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <script type="text/javascript" src="js/cpgd.js" charset="utf-8"></script>
+                    </div>
+                </div>
+                <div class="nei_cpzs_wz fr">
+                    <div>参考价格 <span style="font-size: 23px;color: #b31114;">￥6900/㎡</span></div>
+                    <div>优惠折扣 <span>首付28万起购3房</span></div>
+                    <div>楼盘户型 <span>三室，四室</span></div>
+                    <div>参考价格 <span>山东省淄博市张店区马尚镇东南村宏成·国际广场</span></div>
+                    <div class="nei_cpzs_wz_lxdh">400 692 1217</div>
+                    <div class="clear"><div class="fl">最新开盘 <span>2017年02月24日</span></div><div class="fl">交房时间 <span>2017年12月31日</span></div></div>
+                    <div class="clear"><div class="fl">建筑类型 <span>双拼别墅、高层</span></div><div class="fl">用户点评 <span>共21条</span></div></div>
+                    <div>参考价格 <span>山东省淄博市张店区马尚镇东南村宏成·国际广场</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--产品展示部分结束-->
+    <!--户型图部分开始-->
+    <section>
+        <div class="middle">
+            <div class="nei_hxt">
+                <div class="nei_hxt_bt">户型图</div>
+                <div class="nei_hxt_list">
+                    <ul class="clear">
+                        <li>
+                            <div class="nei_hxt_list_img"><img src="images/hxt_img.png" width="240" height="198" alt=""></div>
+                            <div class="hxt_wz">
+                                <h2>YJ110... 3室2厅2卫</h2>
+                                <p>建筑面积：约110.00㎡</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nei_hxt_list_img"><img src="images/hxt_img.png" width="240" height="198" alt=""></div>
+                            <div class="hxt_wz">
+                                <h2>YJ110... 3室2厅2卫</h2>
+                                <p>建筑面积：约110.00㎡</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nei_hxt_list_img"><img src="images/hxt_img.png" width="240" height="198" alt=""></div>
+                            <div class="hxt_wz">
+                                <h2>YJ110... 3室2厅2卫</h2>
+                                <p>建筑面积：约110.00㎡</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nei_hxt_list_img"><img src="images/hxt_img.png" width="240" height="198" alt=""></div>
+                            <div class="hxt_wz">
+                                <h2>YJ110... 3室2厅2卫</h2>
+                                <p>建筑面积：约110.00㎡</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nei_hxt_list_img"><img src="images/hxt_img.png" width="240" height="198" alt=""></div>
+                            <div class="hxt_wz">
+                                <h2>YJ110... 3室2厅2卫</h2>
+                                <p>建筑面积：约110.00㎡</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <script>
+                    $(document).ready(function(){
+                        $('.nei_hxt_list').kxbdMarquee({
+                            direction:'left',
+                            eventA:'mouseenter',
+                            eventB:'mouseleave'
+                        });
+                    });
+                </script>
+            </div>
+
+        </div>
+    </section>
+    <!--户型图部分结束-->
+    <!--详情页地图部分开始-->
+    <section>
+        <div class="middle">
+            <div class="xq_dt">
+                <div class="xq_dt_bt">地理位置：西至世纪路，北至共青团路，南至商场西路</div>
+                <div class="ditu_box"><img src="images/ditu_img.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <!--详情页地图部分结束-->
+</div>
+<!--主体部分结束-->
+<!--footer部分开始-->
+<footer>
+    <div class="footer_bj">
+        <div class="middle">
+            <div class="footer_mav"><a href="##">网站首页</a>丨<a href="##">公司简介</a>丨<a href="##">产品中心</a>丨
+                <a href="##">新闻动态</a>丨<a href="##">在线留言</a>丨<a href="##">联系我们</a>丨<a href="##">贷款咨询</a></div>
+            <div class="footer_center clear">
+                <div class="zxly fl">
+                    <div class="zxly_bt"><img src="images/zxly_bt.png" alt="在线留言"></div>
+                    <div class="zxly_nr">
+                        <form action="" class="form">
+                            <input type="text" class="shuru" placeholder="姓名："><br>
+                            <input type="text" class="shuru" placeholder="电话："><br>
+                            <textarea class="duohang" placeholder="留言："></textarea>
+                            <input type="submit" value="提交" class="btn"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer_lxwm fl">
+                    地 址：山东省淄博市国际会展中心二楼<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西厅C208<br>
+                    Q Q： 1291250332<br>
+                    邮 箱： guozy@sunkeyweb.com
+                </div>
+                <div class="footer_ewm fr">
+                    <img src="images/ewm.png" alt="二维码">
+                    <p>扫描二维码关注官方公众号</p>
+                </div>
+            </div>
+            <div class="footer_bq">@2013-2045 版权所有 山东商祺信息技术有限公司 鲁ICP备15001861号-3 </div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+
+
+<!--引入s代码-->
+<script>
+    $(document).ready(function() {
+        gaimi();
+    });
+    //登录注册
+    $('#btnLogin').click(function () {
+        openDialog('login', 'login_close');
+        return false;
+    });
+    $('#btnsignup').click(function () {
+        openDialog('signup', 'login_close');
+        return false;
+    });
+    $('#ljzc').click(function () {
+
+        $('#mask').css({'display': 'none'});
+        $('#login').css({'display': 'none'});
+        openDialog('signup', 'login_close');
+        return false;
+    });
+    $('#zjdl').click(function () {
+
+        $('#mask').css({'display': 'none'});
+        $('#signup').css({'display': 'none'});
+        openDialog('login', 'login_close');
+        return false;
+    });
+    /*更改密码*/
+    $('#gm_link').click(function () {
+        $('#login').css({'display': 'none'});
+        openDialog('gm', 'close');
+        return false;
+    });
+    $('#qudengru').click(function () {
+        $('#gm').css({'display': 'none'});
+        openDialog('login', 'close');
+        return false;
+    });
+</script>
+<!--引入js代码-->
+</body>
+</html>

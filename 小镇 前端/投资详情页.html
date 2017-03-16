@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/form.js" charset="utf-8"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header">
+        <div class="middle clear">
+            <div class="logo fl"><img src="images/website-logo.png" alt="logo"></div>
+            <div class="nav fl">
+                <ul class="clear">
+                    <li class="nav_action"><a href="##">首页</a></li>
+                    <li><a href="##">咨询</a></li>
+                    <li><a href="##">投资</a></li>
+                    <li style="width: 56px;"><a href="##">大数据</a></li>
+                    <li style="width: 74px;"><a href="##">小镇建设</a></li>
+                    <li style="width: 74px;"><a href="##">小镇风采</a></li>
+                    <li style="width: 74px;"><a href="##">小镇招商</a></li>
+                </ul>
+            </div>
+            <div class="zc fr">
+                <div class="weixin fl">
+                    <i class="icon iconfont icon-weixin"></i>
+                    <p>公众号</p>
+                </div>
+                <div class="dengru btn_login fl" id="btn_login">
+                    <i class="icon iconfont icon-denglu"></i>
+                    <p>登入</p>
+                </div>
+                <div class="zhuce btn_zhuce fl">
+                    <i class="icon iconfont icon-zhuce"></i>
+                    <p>注册</p>
+                </div>
+                <div class="ewm"><img src="images/download.jpg" width="60" height="60" alt="二维码"></div>
+                <script>
+                    var ewmBox=document.getElementsByClassName('weixin')[0];
+                    var ewmImg=document.getElementsByClassName('ewm')[0];
+                    ewm(ewmBox,ewmImg);
+                </script>
+            </div>
+        </div>
+        <!--登入注册表单部分开始-->
+        <div id="mask"></div>     <!-- 半透明遮罩层 -->
+        <div id="login">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎登录特色小镇网！</h3>
+            </div>
+            <!--登入表单开始-->
+            <div class="login_form">
+                <form action="" method="post" class="bootstrap-frm"  onsubmit="return sb1();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone">
+                                <span class="font-red" id="phone_ts">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima">
+                                <span class="font-red" id="mima_ts">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li class="last">
+                                <span class="use-mail-register">
+                                    <input type="checkbox" id="ck_rmbUser">
+                                    <span class="memory">记住密码</span>
+                                </span>
+
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="登录账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--登入表单结束-->
+
+        </div>
+        <!--登入注册表单部分结束-->
+        <!--注册表单开始-->
+        <div id="zhuce">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎注册特色小镇网！</h3>
+            </div>
+            <!--注册表单开始-->
+            <div class="login_form">
+                <form action="" method="post"  class="bootstrap-frm"  onsubmit="return sb2();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone2">
+                                <span class="font-red" id="phone_ts2">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima2">
+                                <span class="font-red" id="mima_ts2">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="确认密码" id="mima3">
+                                <span class="font-red" id="mima_ts3">两次密码输入不一致</span>
+                            </li>
+                            <li class="my-identify">
+                                <div>我的身份:</div>
+                                <p>
+                                    <img src="images/reg_xzf1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_xzf2.png" class="identify-img2" alt="" style="display: none;">
+                                    <b>小镇方</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_tzr1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_tzr2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>投资人</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_yk1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_yk2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>游客</b>
+                                </p>
+                            </li>
+                            <li class="captcha">
+                                <img src="images/bd_yzm.png" alt="">
+                                <input type="text" placeholder="验证码" class="yanzheng">
+                                <input type="button" class="captcha-button click-border" value="点击获取">
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="注册账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--注册表单结束-->
+        </div>
+        <!--注册表单结束-->
+        <!--反馈表单开始-->
+        <div class="quesform" id="fankui">
+            <div class="questitle clear">
+                <span>反馈&建议</span>
+                <p id="close" class="close"><img src="images/close.png" alt="关闭"></p>
+            </div>
+            <form action="" class="fankui_form" method="post" onsubmit="return sb3();">
+                <div class="queserr"><span id="fk_ts">账号不能为空</span></div>
+                <div class="clear">
+                    <div><span>*</span>您的姓名：</div>
+                    <input type="text" id="name" placeholder="输入您的姓名">
+                </div>
+                <div class="clear">
+                    <div><span>*</span>联系方式：</div>
+                    <input type="text" id="lxfs" placeholder="请输入联系方式">
+                </div>
+                <div class="clear">
+                    <div>反馈意见：</div>
+                    <textarea placeholder="请在这里填写您的反馈和建议"></textarea>
+                </div>
+                <div class="fk_tijiao"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+        <!--反馈表单结束-->
+    </div>
+
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="i_body" style="background-color: #f6f5fa;">
+    <div class="middle">
+        <div class="zx_xq_dqwz"  style="padding-bottom: 20px;">所在位置： <a href="##">投资</a>><span>塑机螺杆检测中心</span></div>
+        <div class="tz_xq_nr clear">
+            <div class="tz_xq_left fl">
+                <div class="tz_title">
+                    <div class="tz_title_bt clear">
+                        <h3 class="fl">塑机螺杆检测中心项目</h3>
+                        <div class="icon1 fr">
+                            <i class="icon iconfont icon-dingwei"></i>
+                            <span>舟山市</span>
+                            <i class="icon iconfont icon-shijian"></i>
+                            <span>2017-01-23</span>
+                        </div>
+                    </div>
+                    <div class="top_list">
+                        <ul class="clear">
+                            <li>所属小镇：<span>中国金塘螺杆小镇</span></li>
+                            <li>项目金额：<span>未知</span></li>
+                            <li>项目单位：<span>浙江舟山群岛新区金塘管理委员会</span></li>
+                            <li>所属地域：<span>舟山市</span></li>
+                            <li>合作方式：<span>运营服务</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 25px;"></div>
+                <div class="tz_tab">
+                    <div class="tab_wrap">
+                        <span class="tab_active">项目主页</span>
+                        <span>项目图片</span>
+                        <span>相关资料</span>
+                    </div>
+                    <div class="tab_box">
+                        <ul>
+                            <li style="display: block;">
+                                <div class="tab_box_nr">
+                                    <h4>项目介绍</h4>
+                                    <div class="tab_box_nr_wz">
+                                        建立统一的质量检测标准，集聚塑机螺杆产品各类检测、认证资源，为产品研发、生产和使
+                                        用提供检测与认证的“一站式”服务。提供生产原料及成品的质量检测、分析与改进、质量
+                                        评价、质量风险预警技术支持、标准咨询、质量认证、计量服务等服务。
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tab_box_nr">
+                                    <div class="img_list clear">
+                                        <div>
+                                            <img src="images/xmtp_img.jpg" alt="项目图片">
+                                            <p>项目图片1</p>
+                                        </div>
+                                        <div>
+                                            <img src="images/xmtp_img.jpg" alt="项目图片">
+                                            <p>项目图片1</p>
+                                        </div>
+                                        <div>
+                                            <img src="images/xmtp_img.jpg" alt="项目图片">
+                                            <p>项目图片1</p>
+                                        </div>
+                                        <div>
+                                            <img src="images/xmtp_img.jpg" alt="项目图片">
+                                            <p>项目图片1</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="tab_box_nr">
+                                    <div class="tab_box_nr_wz" style="padding-top: 0;">
+                                        暂无内容暂无内容暂无内容暂无内容
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="tz_xq_right fr">
+                <div class="tz_xq_right_top">
+                    <p>我有意向</p>
+                </div>
+                <div class="tz_xq_right_bottom">
+                    <div class="tz_xq_right_bottom_yxjg"><div>意向机构(0)</div></div>
+                    <!--无内容显示-->
+                    <div class="jigou_no">
+                        <img src="images/zwnr.png" alt="暂无内容">
+                        <p>暂无数据</p>
+                    </div>
+                    <!--无内容显示介绍-->
+                </div>
+            </div>
+        </div>
+        <div style="height: 75px;"></div>
+    </div>
+</div>
+<!--footer部分开始-->
+<footer>
+    <div class="footer">
+        <div class="middle clear">
+            <div class="footer_left fl">
+                <div class="footer_nav">
+                    <a href="##">关于我们</a>
+                    <a href="##">友情链接</a>
+                    <a href="##">网站律师</a>
+                    <a href="##">免责申明</a>
+                    <a href="##">专家团队</a>
+                    <a href="##">网站地图</a>
+                </div>
+                <div class="footer_bq">
+                    <p>Copyright © 2015 知略科技. All rights reserved.</p>
+                    <p><a href="javascript:void (0);">浙ICP备16027131号</a></p>
+                </div>
+            </div>
+            <div class="footer_right fr">
+                <img src="images/footer-scan-weixin.png" width="60" height="60" alt="二维码">
+                <p>扫描关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="xuanfu">
+        <div class="xf_phone xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-phone"></i></div>
+            <div class="xf_phone_wz">联系<br>方式</div>
+            <div class="xf_phone_img"><img src="images/lxfs.png" alt=""></div>
+        </div>
+        <div class="xf_qs xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-question"></i></div>
+            <div class="xf_phone_wz">问题<br>反馈</div>
+        </div>
+        <div class="xf_gotop xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-dingbu"></i></div>
+            <div class="xf_phone_wz">回到<br>顶部</div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+<!--主体部分结束-->
+<!--js代码调用开始-->
+<script>
+    $(document).ready(function() {
+        var aLogin=document.getElementsByClassName('btn_login');
+        var aZhuce=document.getElementsByClassName('btn_zhuce');
+        var fankui=document.getElementsByClassName('xf_qs')[0];
+
+        for(var i=0;i<aLogin.length;i++){
+            aLogin[i].onclick=function () {
+                openDialog('login', 'login_close');
+            };
+        }
+        for(var j=0;j<aZhuce.length;j++){
+            aZhuce[j].onclick=function () {
+                openDialog('zhuce', 'login_close');
+            };
+        }
+        fankui.onclick=function () {
+            openDialog('fankui', 'close');
+        };
+        aZhuceJs();
+
+        var otzTabBox=document.getElementsByClassName('tab_wrap')[0];
+        var atzTabBox=otzTabBox.getElementsByTagName('span');
+        var otabObj=document.getElementsByClassName('tab_box')[0];
+        var atabObj=otabObj.getElementsByTagName('li');
+
+        xuanfu();
+        tzTab(atzTabBox,atabObj,'tab_active');
+    });
+</script>
+<!--js代码调用结束-->
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/form.js" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+	  <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header">
+        <div class="middle clear">
+            <div class="logo fl"><img src="images/website-logo.png" alt="logo"></div>
+            <div class="nav fl">
+                <ul class="clear">
+                    <li class="nav_action"><a href="##">首页</a></li>
+                    <li><a href="##">咨询</a></li>
+                    <li><a href="##">投资</a></li>
+                    <li style="width: 56px;"><a href="##">大数据</a></li>
+                    <li style="width: 74px;"><a href="##">小镇建设</a></li>
+                    <li style="width: 74px;"><a href="##">小镇风采</a></li>
+                    <li style="width: 74px;"><a href="##">小镇招商</a></li>
+                </ul>
+            </div>
+            <div class="zc fr">
+                <div class="weixin fl">
+                    <i class="icon iconfont icon-weixin"></i>
+                    <p>公众号</p>
+                </div>
+                <div class="dengru btn_login fl" id="btn_login">
+                    <i class="icon iconfont icon-denglu"></i>
+                    <p>登入</p>
+                </div>
+                <div class="zhuce btn_zhuce fl">
+                    <i class="icon iconfont icon-zhuce"></i>
+                    <p>注册</p>
+                </div>
+                <div class="ewm"><img src="images/download.jpg" width="60" height="60" alt="二维码"></div>
+                <script>
+                    var ewmBox=document.getElementsByClassName('weixin')[0];
+                    var ewmImg=document.getElementsByClassName('ewm')[0];
+                    ewm(ewmBox,ewmImg);
+                </script>
+            </div>
+        </div>
+        <!--登入注册表单部分开始-->
+        <div id="mask"></div>     <!-- 半透明遮罩层 -->
+        <div id="login">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎登录特色小镇网！</h3>
+            </div>
+            <!--登入表单开始-->
+            <div class="login_form">
+                <form action="" method="post" class="bootstrap-frm"  onsubmit="return sb1();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone">
+                                <span class="font-red" id="phone_ts">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima">
+                                <span class="font-red" id="mima_ts">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li class="last">
+                                <span class="use-mail-register">
+                                    <input type="checkbox" id="ck_rmbUser">
+                                    <span class="memory">记住密码</span>
+                                </span>
+
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="登录账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--登入表单结束-->
+
+        </div>
+        <!--登入注册表单部分结束-->
+        <!--注册表单开始-->
+        <div id="zhuce">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎注册特色小镇网！</h3>
+            </div>
+            <!--注册表单开始-->
+            <div class="login_form">
+                <form action="" method="post"  class="bootstrap-frm"  onsubmit="return sb2();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone2">
+                                <span class="font-red" id="phone_ts2">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima2">
+                                <span class="font-red" id="mima_ts2">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="确认密码" id="mima3">
+                                <span class="font-red" id="mima_ts3">两次密码输入不一致</span>
+                            </li>
+                            <li class="my-identify">
+                                <div>我的身份:</div>
+                                <p>
+                                    <img src="images/reg_xzf1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_xzf2.png" class="identify-img2" alt="" style="display: none;">
+                                    <b>小镇方</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_tzr1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_tzr2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>投资人</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_yk1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_yk2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>游客</b>
+                                </p>
+                            </li>
+                            <li class="captcha">
+                                <img src="images/bd_yzm.png" alt="">
+                                <input type="text" placeholder="验证码" class="yanzheng">
+                                <input type="button" class="captcha-button click-border" value="点击获取">
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="注册账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--注册表单结束-->
+        </div>
+        <!--注册表单结束-->
+        <!--反馈表单开始-->
+        <div class="quesform" id="fankui">
+            <div class="questitle clear">
+                <span>反馈&建议</span>
+                <p id="close" class="close"><img src="images/close.png" alt="关闭"></p>
+            </div>
+            <form action="" class="fankui_form" method="post" onsubmit="return sb3();">
+                <div class="queserr"><span id="fk_ts">账号不能为空</span></div>
+                <div class="clear">
+                    <div><span>*</span>您的姓名：</div>
+                    <input type="text" id="name" placeholder="输入您的姓名">
+                </div>
+                <div class="clear">
+                    <div><span>*</span>联系方式：</div>
+                    <input type="text" id="lxfs" placeholder="请输入联系方式">
+                </div>
+                <div class="clear">
+                    <div>反馈意见：</div>
+                    <textarea placeholder="请在这里填写您的反馈和建议"></textarea>
+                </div>
+                <div class="fk_tijiao"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+        <!--反馈表单结束-->
+    </div>
+
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="i_body">
+    <!--顶部图片部式开始-->
+    <div class="top-picture">
+        <p class="big-word">带你去看特色小镇</p>
+        <p class="center-word">汇集了全球 <span>1774</span> 个特色小镇</p>
+        <div class="input-wrap">
+            <div class="input-fog"></div>
+            <form>
+                <input type="text" class="input_wz" placeholder="请输入您要查询的信息，如：浙江、梦想小镇">
+                <input type="submit" class="btn" value="">
+            </form>
+
+        </div>
+    </div>
+    <!--顶部图片部分结束-->
+    <!--顶部两栏部分开始-->
+    <div class="top_two">
+        <div class="middle clear">
+            <!--信息一览部分开始-->
+            <div class="center-left fl">
+                <ul class="info-title clear">
+                    <li class="info-big"><span></span>信息一览</li>
+                    <li class="active-title active_title_one">招标信息</li>
+                    <li class="active-title">新闻资讯</li>
+                    <li class="active-title">政策文件</li>
+                </ul>
+                <div class="xxyl_nr" style="display: block;">
+                    <div class="bic_title">
+                        <a href="##" target="_blank">
+                            <p class="big-title-word">【招标】1鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告</p>
+                        </a>
+                        <p class="size-four bid-info"> 鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告 一、招标条件 根据《中华人
+                            民共和国政府采购法》、《中华人民共和国政府采购法实施条例》等有关法律法规的规定，云南招标股份
+                            有限公司受鲁甸县文化体育广播电视和旅游局的委托，对鲁甸县文化体育广播电视和旅游局龙头山旅游小
+                            镇运管托管服务采购项目</p>
+                    </div>
+                    <hr class="dash">
+                    <div class="tab_list">
+                        <ul>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">1全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="xxyl_nr">
+                    <div class="bic_title">
+                        <a href="##" target="_blank">
+                            <p class="big-title-word">【招标】2鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告</p>
+                        </a>
+                        <p class="size-four bid-info"> 鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告 一、招标条件 根据《中华人
+                            民共和国政府采购法》、《中华人民共和国政府采购法实施条例》等有关法律法规的规定，云南招标股份
+                            有限公司受鲁甸县文化体育广播电视和旅游局的委托，对鲁甸县文化体育广播电视和旅游局龙头山旅游小
+                            镇运管托管服务采购项目</p>
+                    </div>
+                    <hr class="dash">
+                    <div class="tab_list">
+                        <ul>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">2全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="xxyl_nr">
+                    <div class="bic_title">
+                        <a href="##" target="_blank">
+                            <p class="big-title-word">【招标】3鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告</p>
+                        </a>
+                        <p class="size-four bid-info"> 鲁甸县文化体育广播电视和旅游局龙头山旅游小镇运管托管服务采购招标公告 一、招标条件 根据《中华人
+                            民共和国政府采购法》、《中华人民共和国政府采购法实施条例》等有关法律法规的规定，云南招标股份
+                            有限公司受鲁甸县文化体育广播电视和旅游局的委托，对鲁甸县文化体育广播电视和旅游局龙头山旅游小
+                            镇运管托管服务采购项目</p>
+                    </div>
+                    <hr class="dash">
+                    <div class="tab_list">
+                        <ul>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">3全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                            <li><a href="##" class="clear">
+                                <span class="circle-little"></span>
+                                <span class="size-three">全国政协委员朱共山：“特色小镇”应标配绿色能源</span>
+                                <span class="index-time">2017-03-06</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--信息一览部分结束-->
+            <!--热门活动部分开始-->
+            <div class="rmhd fr">
+                <div><span class="shuxian"></span><span class="hot-word">热门活动</span></div>
+                <div class="huodong_01">
+                    <div class="hot_pic"><img src="images/fxzl.png" alt=""></div>
+                    <p class="size-four1 hot-name">浙江电视台-特色小镇发现之旅</p>
+                    <div class="detail-wrap clear">
+                        <i class="icon iconfont icon-jinxingzhong"></i>
+                        <span class="game-state">进行中</span>
+                        <span class="look-detail-two"><a href="##">我要报名</a></span>
+                    </div>
+                </div>
+                <div class="huodong_01 huodong_02">
+                    <div class="hot_pic"><img src="images/quanjing.png" alt=""></div>
+                    <p class="size-four1 hot-name">VR全景，跟我去拍小镇</p>
+                    <div class="detail-wrap  clear">
+                        <i class="icon iconfont icon-kaishi fl"></i>
+                        <span class="game-state">未启动</span>
+                        <span class="look-detail-two"><a href="##">查看详情</a></span>
+                    </div>
+                </div>
+            </div>
+            <!--热门活动部分结束-->
+        </div>
+    </div>
+    <!--顶部两栏部分结束-->
+    <!--精品小镇部分开始-->
+    <div class="jpxz middle">
+        <hr class="hr">
+        <div class="boutiqu-towns clear">
+            <span class="shuxian fl"></span>
+            <span class="hot-word fl">精品小镇</span>
+            <a href="##" target="_blank" class="fr"><span class="look-more-towns">更多特色小镇</span></a>
+        </div>
+        <div class="jpxz_list">
+            <ul class="clear">
+                <li>
+                    <a href="##">
+                        <div class="jpxz_list_img"><img src="images/tsxz_img1.jpg" alt="精品小镇"></div>
+                        <p class="boutique-town-name">吴兴美妆小镇</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="jpxz_list_img"><img src="images/tsxz_img2.jpg" alt="精品小镇"></div>
+                        <p class="boutique-town-name">余杭梦想小镇</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="jpxz_list_img"><img src="images/tsxz_img3.jpg" alt="精品小镇"></div>
+                        <p class="boutique-town-name">江干丁兰智慧小镇</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="##">
+                        <div class="jpxz_list_img"><img src="images/tsxz_img4.jpg" alt="精品小镇"></div>
+                        <p class="boutique-town-name">上城玉皇山南基金小镇</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--精品小镇部分结束-->
+    <!--小镇大数据部分开始-->
+    <div class="big-data middle">
+        <div class="boutiqu-towns clear">
+            <span class="shuxian fl"></span>
+            <span class="hot-word fl">小镇大数据</span>
+            <a href="##" target="_blank" class="fr"><span class="look-more-towns">查看详情</span></a>
+        </div>
+        <div class="big-data_list">
+            <ul class="clear">
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img1.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇分布</p>
+                            <p class="data-word">收录全球数千个特色小镇</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img2.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇数量</p>
+                            <p class="data-word">显示中国各省小镇数量</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img3.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇舆情</p>
+                            <p class="data-word">实时更新主流搜索引擎搜索指数</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img4.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇经济</p>
+                            <p class="data-word">统计浙江省特色小镇拟投资额</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img5.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇规模</p>
+                            <p class="data-word">展示浙江省特色特色小镇规划面积及建设面积</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img6.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇环境</p>
+                            <p class="data-word">实时更新中国特色小镇PM2.5数据</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img7.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇配套</p>
+                            <p class="data-word">统计中国特色小镇配套设施数量</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img8.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇旅游</p>
+                            <p class="data-word">统计浙江省特色小镇景区等级</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img9.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">小镇交通</p>
+                            <p class="data-word">基于交通和区位分析特色小镇交通便利性</p>
+                        </div>
+                    </div>
+                </a></li>
+                <li><a href="##">
+                    <div class="dsj_box">
+                        <div class="dsj_box_img"><img src="images/dsj_img10.png" alt="大数据"></div>
+                        <div class="dsj_box_wz">
+                            <p class="data-short">投资进度</p>
+                            <p class="data-word">统计浙江省特色小镇产业投资与固定资产投资</p>
+                        </div>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    <!--小镇大数据部分结束-->
+    <!--小镇建设部分开始-->
+    <div class="xzjs middle">
+        <div class="boutiqu-towns clear">
+            <span class="shuxian fl"></span>
+            <span class="hot-word fl">小镇建设</span>
+        </div>
+        <div class="xzjs_list">
+            <div class="xzjs_list_left">
+                <ul>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_wz fl">
+                            <p class="xzjs_wz_bt">政策解读</p>
+                            <p class="xzjs_wz_wz">2015年至今，全国关于特色小镇建设的政策</p>
+                        </div>
+                        <div class="xzjs_list_dian fr"></div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_wz fl">
+                            <p class="xzjs_wz_bt">规划咨询</p>
+                            <p class="xzjs_wz_wz">同济大学博士团队以智能、生态和创新为主要手段为小镇提供规划解决方案</p>
+                        </div>
+                        <div class="xzjs_list_dian fr"></div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_wz fl">
+                            <p class="xzjs_wz_bt">招商引资</p>
+                            <p class="xzjs_wz_wz">借助大数据、互联网等技术建立招商引资平台，精准匹配特色小镇和目标对象</p>
+                        </div>
+                        <div class="xzjs_list_dian fr"></div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_wz fl">
+                            <p class="xzjs_wz_bt">小镇评价</p>
+                            <p class="xzjs_wz_wz">建立特色小镇创建评价指标体系，从5大类、53小类对特色小镇进行综合评价</p>
+                        </div>
+                        <div class="xzjs_list_dian fr"></div>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="hr-wrap"></div>
+            <div class="xzjs_list_right">
+                <ul>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_dian fl"></div>
+                        <div class="xzjs_list_wz fr">
+                            <p class="xzjs_wz_bt">政策解读</p>
+                            <p class="xzjs_wz_wz">2015年至今，全国关于特色小镇建设的政策</p>
+                        </div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_dian fl"></div>
+                        <div class="xzjs_list_wz fr">
+                            <p class="xzjs_wz_bt">政策解读</p>
+                            <p class="xzjs_wz_wz">2015年至今，全国关于特色小镇建设的政策</p>
+                        </div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_dian fl"></div>
+                        <div class="xzjs_list_wz fr">
+                            <p class="xzjs_wz_bt">政策解读</p>
+                            <p class="xzjs_wz_wz">2015年至今，全国关于特色小镇建设的政策</p>
+                        </div>
+                    </a></li>
+                    <li><a href="##" class="clear">
+                        <div class="xzjs_list_dian fl"></div>
+                        <div class="xzjs_list_wz fr">
+                            <p class="xzjs_wz_bt">政策解读</p>
+                            <p class="xzjs_wz_wz">2015年至今，全国关于特色小镇建设的政策</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="xzjs_ckxq"><a href="##">查看详情</a></div>
+        </div>
+    </div>
+    <!--小镇建设部分结束-->
+</div>
+<!--footer部分开始-->
+<footer>
+    <div class="footer">
+        <div class="middle clear">
+            <div class="footer_left fl">
+                <div class="footer_nav">
+                    <a href="##">关于我们</a>
+                    <a href="##">友情链接</a>
+                    <a href="##">网站律师</a>
+                    <a href="##">免责申明</a>
+                    <a href="##">专家团队</a>
+                    <a href="##">网站地图</a>
+                </div>
+                <div class="footer_bq">
+                    <p>Copyright © 2015 知略科技. All rights reserved.</p>
+                    <p><a href="javascript:void (0);">浙ICP备16027131号</a></p>
+                </div>
+            </div>
+            <div class="footer_right fr">
+                <img src="images/footer-scan-weixin.png" width="60" height="60" alt="二维码">
+                <p>扫描关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="xuanfu">
+        <div class="xf_phone xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-phone"></i></div>
+            <div class="xf_phone_wz">联系<br>方式</div>
+            <div class="xf_phone_img"><img src="images/lxfs.png" alt=""></div>
+        </div>
+        <div class="xf_qs xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-question"></i></div>
+            <div class="xf_phone_wz">问题<br>反馈</div>
+        </div>
+        <div class="xf_gotop xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-dingbu"></i></div>
+            <div class="xf_phone_wz">回到<br>顶部</div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+<!--主体部分结束-->
+<!--js代码调用开始-->
+<script>
+    $(document).ready(function() {
+        var aLogin=document.getElementsByClassName('btn_login');
+        var aZhuce=document.getElementsByClassName('btn_zhuce');
+        var fankui=document.getElementsByClassName('xf_qs')[0];
+
+        for(var i=0;i<aLogin.length;i++){
+            aLogin[i].onclick=function () {
+                openDialog('login', 'login_close');
+            };
+        }
+        for(var j=0;j<aZhuce.length;j++){
+            aZhuce[j].onclick=function () {
+                openDialog('zhuce', 'login_close');
+            };
+        }
+        fankui.onclick=function () {
+            openDialog('fankui', 'close');
+        };
+
+        indexTab();
+        numJmp();
+        xuanfu();
+        aZhuceJs();
+    });
+</script>
+<!--js代码调用结束-->
+</body>
+</html>

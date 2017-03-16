@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/form.js" charset="utf-8"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header">
+        <div class="middle clear">
+            <div class="logo fl"><img src="images/website-logo.png" alt="logo"></div>
+            <div class="nav fl">
+                <ul class="clear">
+                    <li class="nav_action"><a href="##">首页</a></li>
+                    <li><a href="##">咨询</a></li>
+                    <li><a href="##">投资</a></li>
+                    <li style="width: 56px;"><a href="##">大数据</a></li>
+                    <li style="width: 74px;"><a href="##">小镇建设</a></li>
+                    <li style="width: 74px;"><a href="##">小镇风采</a></li>
+                    <li style="width: 74px;"><a href="##">小镇招商</a></li>
+                </ul>
+            </div>
+            <div class="zc fr">
+                <div class="weixin fl">
+                    <i class="icon iconfont icon-weixin"></i>
+                    <p>公众号</p>
+                </div>
+                <div class="dengru btn_login fl" id="btn_login">
+                    <i class="icon iconfont icon-denglu"></i>
+                    <p>登入</p>
+                </div>
+                <div class="zhuce btn_zhuce fl">
+                    <i class="icon iconfont icon-zhuce"></i>
+                    <p>注册</p>
+                </div>
+                <div class="ewm"><img src="images/download.jpg" width="60" height="60" alt="二维码"></div>
+                <script>
+                    var ewmBox=document.getElementsByClassName('weixin')[0];
+                    var ewmImg=document.getElementsByClassName('ewm')[0];
+                    ewm(ewmBox,ewmImg);
+                </script>
+            </div>
+        </div>
+        <!--登入注册表单部分开始-->
+        <div id="mask"></div>     <!-- 半透明遮罩层 -->
+        <div id="login">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎登录特色小镇网！</h3>
+            </div>
+            <!--登入表单开始-->
+            <div class="login_form">
+                <form action="" method="post" class="bootstrap-frm"  onsubmit="return sb1();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone">
+                                <span class="font-red" id="phone_ts">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima">
+                                <span class="font-red" id="mima_ts">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li class="last">
+                                <span class="use-mail-register">
+                                    <input type="checkbox" id="ck_rmbUser">
+                                    <span class="memory">记住密码</span>
+                                </span>
+
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="登录账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--登入表单结束-->
+
+        </div>
+        <!--登入注册表单部分结束-->
+        <!--注册表单开始-->
+        <div id="zhuce">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎注册特色小镇网！</h3>
+            </div>
+            <!--注册表单开始-->
+            <div class="login_form">
+                <form action="" method="post"  class="bootstrap-frm"  onsubmit="return sb2();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone2">
+                                <span class="font-red" id="phone_ts2">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima2">
+                                <span class="font-red" id="mima_ts2">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="确认密码" id="mima3">
+                                <span class="font-red" id="mima_ts3">两次密码输入不一致</span>
+                            </li>
+                            <li class="my-identify">
+                                <div>我的身份:</div>
+                                <p>
+                                    <img src="images/reg_xzf1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_xzf2.png" class="identify-img2" alt="" style="display: none;">
+                                    <b>小镇方</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_tzr1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_tzr2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>投资人</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_yk1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_yk2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>游客</b>
+                                </p>
+                            </li>
+                            <li class="captcha">
+                                <img src="images/bd_yzm.png" alt="">
+                                <input type="text" placeholder="验证码" class="yanzheng">
+                                <input type="button" class="captcha-button click-border" value="点击获取">
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="注册账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--注册表单结束-->
+        </div>
+        <!--注册表单结束-->
+        <!--反馈表单开始-->
+        <div class="quesform" id="fankui">
+            <div class="questitle clear">
+                <span>反馈&建议</span>
+                <p id="close" class="close"><img src="images/close.png" alt="关闭"></p>
+            </div>
+            <form action="" class="fankui_form" method="post" onsubmit="return sb3();">
+                <div class="queserr"><span id="fk_ts">账号不能为空</span></div>
+                <div class="clear">
+                    <div><span>*</span>您的姓名：</div>
+                    <input type="text" id="name" placeholder="输入您的姓名">
+                </div>
+                <div class="clear">
+                    <div><span>*</span>联系方式：</div>
+                    <input type="text" id="lxfs" placeholder="请输入联系方式">
+                </div>
+                <div class="clear">
+                    <div>反馈意见：</div>
+                    <textarea placeholder="请在这里填写您的反馈和建议"></textarea>
+                </div>
+                <div class="fk_tijiao"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+        <!--反馈表单结束-->
+    </div>
+
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="i_body">
+    <div class="xz_banner">
+        <div id="demo01" class="flexslider">
+            <ul class="slides">
+                <li>
+                    <div class="img">
+                        <img src="images/town-carousel-1.jpg" width="100%"  alt="" />
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="images/town-carousel-2.jpg" width="100%"  alt=""  />
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="images/town-carousel-2.jpg" width="100%"  alt=""  />
+                    </div>
+                </li>
+            </ul>
+        </div><!--flexslider end-->
+        <script type="text/javascript" src="js/slider.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $('#demo01').flexslider({
+                    animation: "slide",
+                    direction:"horizontal",
+                    slideshowSpeed: 10000,
+                    easing:"swing"
+                });
+            });
+        </script>
+    </div>
+    <div class="zs_xq middle clear">
+        <!--招商详情页左区开始-->
+        <div class="zs_xq_left fl">
+            <ul class="zs_xq_left_list">
+                <li class="town_active"><a href="javascript:void (0);">小镇介绍</a></li>
+                <li><a href="javascript:void (0);">区位交通</a></li>
+                <li><a href="javascript:void (0);">政策文件</a></li>
+                <li><a href="javascript:void (0);">小镇规划</a></li>
+                <li><a href="javascript:void (0);">投资成本</a></li>
+                <li><a href="javascript:void (0);">招商项目</a></li>
+                <li><a href="javascript:void (0);">入驻企业</a></li>
+                <li><a href="javascript:void (0);">招标信息</a></li>
+            </ul>
+        </div>
+        <!--招商详情页左区结束-->
+        <!--招商详情页右区开始-->
+        <div class="zs_xq_right fr">
+            <div class="town-show-list" style="display: block;">
+                <div class="zs_xzxx">
+                    <div class="bar-title">小镇信息</div>
+                    <div class="xzxx_list clear">
+                        <p>小镇名称: <span>吴兴美妆小镇</span></p>
+                        <p>所属产业: <span>时尚产业</span></p>
+                        <p>投资规模: <span>105亿元</span></p>
+                        <p>入驻企业: <span>100家</span></p>
+                        <p>规划面积: <span>3.28km²</span></p>
+                        <p>小镇位置: <span>埭溪镇</span></p>
+                    </div>
+                </div>
+                <div class="zs_xzxq">
+                    <div class="bar-title">小镇详情</div>
+                    <div class="xzxq_list clear">
+                        <p>美妆小镇规划面积3.28平方公里，建设面积1.33平方公里，旨在打造一座产城融合的复合型小镇。在产业
+                            布局上，美妆小镇将重点引进现代时尚化妆品为主的加工制造企业，以展示博览电子商务为主的体验展销
+                            行业企业，以化妆品研发设计、文化创意等为主的企业及相关的配套企业。在空间格局上，美妆小镇将构
+                            建一核三区的空间布局，即化妆品产业核、产业服务区、旅游休闲区和创意体验区。</p>
+                        <p>按照“企业主体、政府引导、市场运作”原则，实行“企业+基金+政府 ”运作模式。政府负责产业基地建
+                            设用地、相关优惠政策提供，并全程为公司代理企业开办的有关审批工作，协助公司做好项目建设协调服
+                            务工作。公司负责招商引资和各功能区管理。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="town-show-list">
+                <!--未登入显示-->
+                <!--<div class="town-detail-deblocking">
+                    <img src="images/lokic.png" alt="">
+                    <p>点击<a href="##">登入</a>后才可查看</p>
+                </div>-->
+                <!--登入显示-->
+                <!--登入显示-->
+                <div class="qwjt">
+                    <div class="bar-title">区位交通</div>
+                    <div class="xzxq_list">
+                        <p>美妆小镇位于湖州吴兴区内，地理位置优越，距离市区26.7公里，距上海120公里，距杭州30公里，距高
+                            速入口4.8公里，距高铁站21.8公里，距机场63公里。</p>
+                        <img src="images/qwjt.png" alt="">
+                    </div>
+                </div>
+                <!--登入显示-->
+            </div>
+            <div class="town-show-list">
+                <!--未登入显示-->
+                <!--<div class="town-detail-deblocking">
+                    <img src="images/lokic.png" alt="">
+                    <p>点击<a href="##">登入</a>后才可查看</p>
+                </div>-->
+                <!--登入显示-->
+                <!--登入显示-->
+                <div class="qwjt">
+                    <div class="bar-title">区位交通</div>
+                    <div class="xzxq_list">
+                        <p>美妆小镇位于湖州吴兴区内，地理位置优越，距离市区26.7公里，距上海120公里，距杭州30公里，距高
+                            速入口4.8公里，距高铁站21.8公里，距机场63公里。</p>
+
+                    </div>
+                </div>
+                <!--登入显示-->
+            </div>
+            <div class="town-show-list">
+                <!--未登入显示-->
+                <!--<div class="town-detail-deblocking">
+                    <img src="images/lokic.png" alt="">
+                    <p>点击<a href="##">登入</a>后才可查看</p>
+                </div>-->
+                <!--登入显示-->
+                <!--登入显示-->
+                <div class="qwjt">
+                    <div class="bar-title">小镇规划</div>
+                    <div class="xzxq_list">
+                        <p>美妆小镇位于湖州吴兴区内，地理位置优越，距离市区26.7公里，距上海120公里，距杭州30公里，距高
+                            速入口4.8公里，距高铁站21.8公里，距机场63公里。</p>
+
+                    </div>
+                </div>
+                <!--登入显示-->
+            </div>
+            <div class="town-show-list">
+                <!--未登入显示-->
+                <!--<div class="town-detail-deblocking">
+                    <img src="images/lokic.png" alt="">
+                    <p>点击<a href="##">登入</a>后才可查看</p>
+                </div>-->
+                <!--登入显示-->
+                <!--登入显示-->
+                <div class="tzcb_list">
+                    <div class="bar-title">投资成本</div>
+                    <ul class="clear">
+                        <li>
+                            <h3>工业用地出让基准地价</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-1.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-1l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>般工商业用电</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-2.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-2l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>0.834</p>
+                                <b>元/千瓦/时</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>大工业用电</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-3.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-3l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>工业商业用水</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-4.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-4l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>特殊行业用水</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-5.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-5l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>当地最低工资标准</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-6.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-6l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>当地在岗职工平均工资</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-7.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-7l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>住宅用地出让基准地价</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-1.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-1l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                        <li>
+                            <h3>商业用地出让基准地价</h3>
+                            <div class="cost-imgs">
+                                <img src="images/investment-cost-1.png" class="bj_img" alt="">
+                                <img src="images/investment-cost-1l.png" class="logo_img" alt="">
+                            </div>
+                            <div>
+                                <p>288</p>
+                                <b>元/平方米</b>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--登入显示-->
+            </div>
+            <div class="town-show-list">
+                <!--未登入显示-->
+                <!--<div class="town-detail-deblocking">
+                    <img src="images/lokic.png" alt="">
+                    <p>点击<a href="##">登入</a>后才可查看</p>
+                </div>-->
+                <!--登入显示-->
+                <!--登入显示-->
+                <div class="zsxm_list">
+                    <div class="bar-title">招商项目</div>
+                    <ul class="clear">
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img1.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img2.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img3.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img1.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img2.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img3.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img1.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img2.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                        <li><a href="##">
+                            <div class="zsxm_list_img"><img src="images/zsxm_img3.jpg" alt=""></div>
+                            <p>项目名称：<span>中国美妆小镇化妆品博物馆</span></p>
+                            <p>项目类型：<span> 综合配套项目</span></p>
+                            <p>总投资额：<span>13000万元</span></p>
+                            <p>项目状态：<span>已签约</span></p>
+                        </a></li>
+                    </ul>
+                </div>
+                <!--登入显示-->
+            </div>
+            <div class="town-show-list">
+                <table class="settled-company">
+                    <thead>
+                        <tr><th>公司名称</th><th>注册资本</th><th>成立时间</th><th>公司地区</th><th>提供服务</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                        <tr><td>南通合盛包装制品有限公司</td><td>200万元人民币</td><td>2015/4/15</td><td>南通</td><td>其他制造业</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="town-show-list">
+                <div class="zbgg_list">
+                    <ul>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                        <li class="clear"><span>中标公告</span><a href="##">W2016-064中国美妆小镇检测研发中心建设工程监理项目评标结果公示</a><b>[2016-7-8]</b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--招商详情页右区结束-->
+    </div>
+</div>
+<!--footer部分开始-->
+<footer>
+    <div class="footer">
+        <div class="middle clear">
+            <div class="footer_left fl">
+                <div class="footer_nav">
+                    <a href="##">关于我们</a>
+                    <a href="##">友情链接</a>
+                    <a href="##">网站律师</a>
+                    <a href="##">免责申明</a>
+                    <a href="##">专家团队</a>
+                    <a href="##">网站地图</a>
+                </div>
+                <div class="footer_bq">
+                    <p>Copyright © 2015 知略科技. All rights reserved.</p>
+                    <p><a href="javascript:void (0);">浙ICP备16027131号</a></p>
+                </div>
+            </div>
+            <div class="footer_right fr">
+                <img src="images/footer-scan-weixin.png" width="60" height="60" alt="二维码">
+                <p>扫描关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="xuanfu">
+        <div class="xf_phone xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-phone"></i></div>
+            <div class="xf_phone_wz">联系<br>方式</div>
+            <div class="xf_phone_img"><img src="images/lxfs.png" alt=""></div>
+        </div>
+        <div class="xf_qs xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-question"></i></div>
+            <div class="xf_phone_wz">问题<br>反馈</div>
+        </div>
+        <div class="xf_gotop xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-dingbu"></i></div>
+            <div class="xf_phone_wz">回到<br>顶部</div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+<!--主体部分结束-->
+<!--js代码调用开始-->
+<script>
+    $(document).ready(function() {
+        var aLogin=document.getElementsByClassName('btn_login');
+        var aZhuce=document.getElementsByClassName('btn_zhuce');
+        var fankui=document.getElementsByClassName('xf_qs')[0];
+
+        for(var i=0;i<aLogin.length;i++){
+            aLogin[i].onclick=function () {
+                openDialog('login', 'login_close');
+            };
+        }
+        for(var j=0;j<aZhuce.length;j++){
+            aZhuce[j].onclick=function () {
+                openDialog('zhuce', 'login_close');
+            };
+        }
+        fankui.onclick=function () {
+            openDialog('fankui', 'close');
+        };
+        aZhuceJs();
+
+        xuanfu();
+        var zsBox=document.getElementsByClassName('zs_xq_left_list')[0];
+        var azsTab=zsBox.getElementsByTagName('li');
+        var azsAim=document.getElementsByClassName('town-show-list');
+
+        tabZS(azsTab,azsAim,'town_active');
+    });
+</script>
+<!--js代码调用结束-->
+</body>
+</html>

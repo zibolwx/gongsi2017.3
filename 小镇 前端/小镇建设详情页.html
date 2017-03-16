@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/sunkey.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/sunkeyld.js"></script>
+    <script type="text/javascript" src="js/sunkey.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/form.js" charset="utf-8"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script type="text/javascript" src="js/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+<!--头部开始-->
+<header>
+    <div class="header">
+        <div class="middle clear">
+            <div class="logo fl"><img src="images/website-logo.png" alt="logo"></div>
+            <div class="nav fl">
+                <ul class="clear">
+                    <li class="nav_action"><a href="##">首页</a></li>
+                    <li><a href="##">咨询</a></li>
+                    <li><a href="##">投资</a></li>
+                    <li style="width: 56px;"><a href="##">大数据</a></li>
+                    <li style="width: 74px;"><a href="##">小镇建设</a></li>
+                    <li style="width: 74px;"><a href="##">小镇风采</a></li>
+                    <li style="width: 74px;"><a href="##">小镇招商</a></li>
+                </ul>
+            </div>
+            <div class="zc fr">
+                <div class="weixin fl">
+                    <i class="icon iconfont icon-weixin"></i>
+                    <p>公众号</p>
+                </div>
+                <div class="dengru btn_login fl" id="btn_login">
+                    <i class="icon iconfont icon-denglu"></i>
+                    <p>登入</p>
+                </div>
+                <div class="zhuce btn_zhuce fl">
+                    <i class="icon iconfont icon-zhuce"></i>
+                    <p>注册</p>
+                </div>
+                <div class="ewm"><img src="images/download.jpg" width="60" height="60" alt="二维码"></div>
+                <script>
+                    var ewmBox=document.getElementsByClassName('weixin')[0];
+                    var ewmImg=document.getElementsByClassName('ewm')[0];
+                    ewm(ewmBox,ewmImg);
+                </script>
+            </div>
+        </div>
+        <!--登入注册表单部分开始-->
+        <div id="mask"></div>     <!-- 半透明遮罩层 -->
+        <div id="login">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎登录特色小镇网！</h3>
+            </div>
+            <!--登入表单开始-->
+            <div class="login_form">
+                <form action="" method="post" class="bootstrap-frm"  onsubmit="return sb1();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone">
+                                <span class="font-red" id="phone_ts">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima">
+                                <span class="font-red" id="mima_ts">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li class="last">
+                                <span class="use-mail-register">
+                                    <input type="checkbox" id="ck_rmbUser">
+                                    <span class="memory">记住密码</span>
+                                </span>
+
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="登录账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--登入表单结束-->
+
+        </div>
+        <!--登入注册表单部分结束-->
+        <!--注册表单开始-->
+        <div id="zhuce">
+            <div class="register-header">
+                <div><img src="images/website-logo-2.png" alt="logo"></div>
+                <h3>欢迎注册特色小镇网！</h3>
+            </div>
+            <!--注册表单开始-->
+            <div class="login_form">
+                <form action="" method="post"  class="bootstrap-frm"  onsubmit="return sb2();">
+                    <div class="register-main">
+                        <ul>
+                            <li class="input-phone">
+                                <img src="images/reg-personal-unchecked.png" alt="">
+                                <input type="text" placeholder="请输入手机号码" id="phone2">
+                                <span class="font-red" id="phone_ts2">手机号码格式错误</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="密码" id="mima2">
+                                <span class="font-red" id="mima_ts2">密码长度6-16位，可以为数字、字母、字符</span>
+                            </li>
+                            <li>
+                                <img src="images/reg-password-unchecked.png">
+                                <input type="text" placeholder="确认密码" id="mima3">
+                                <span class="font-red" id="mima_ts3">两次密码输入不一致</span>
+                            </li>
+                            <li class="my-identify">
+                                <div>我的身份:</div>
+                                <p>
+                                    <img src="images/reg_xzf1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_xzf2.png" class="identify-img2" alt="" style="display: none;">
+                                    <b>小镇方</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_tzr1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_tzr2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>投资人</b>
+                                </p>
+                                <p>
+                                    <img src="images/reg_yk1.png" class="identify-img1" alt="">
+                                    <img src="images/reg_yk2.png" class="identify-img2" alt=""  style="display: none;">
+                                    <b>游客</b>
+                                </p>
+                            </li>
+                            <li class="captcha">
+                                <img src="images/bd_yzm.png" alt="">
+                                <input type="text" placeholder="验证码" class="yanzheng">
+                                <input type="button" class="captcha-button click-border" value="点击获取">
+                            </li>
+                            <li class="register-account">
+                                <input type="submit" value="注册账号">
+                            </li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+            <!--注册表单结束-->
+        </div>
+        <!--注册表单结束-->
+        <!--反馈表单开始-->
+        <div class="quesform" id="fankui">
+            <div class="questitle clear">
+                <span>反馈&建议</span>
+                <p id="close" class="close"><img src="images/close.png" alt="关闭"></p>
+            </div>
+            <form action="" class="fankui_form" method="post" onsubmit="return sb3();">
+                <div class="queserr"><span id="fk_ts">账号不能为空</span></div>
+                <div class="clear">
+                    <div><span>*</span>您的姓名：</div>
+                    <input type="text" id="name" placeholder="输入您的姓名">
+                </div>
+                <div class="clear">
+                    <div><span>*</span>联系方式：</div>
+                    <input type="text" id="lxfs" placeholder="请输入联系方式">
+                </div>
+                <div class="clear">
+                    <div>反馈意见：</div>
+                    <textarea placeholder="请在这里填写您的反馈和建议"></textarea>
+                </div>
+                <div class="fk_tijiao"><input type="submit" value="提交"></div>
+            </form>
+        </div>
+        <!--反馈表单结束-->
+    </div>
+
+</header>
+<!--头部结束-->
+<!--主体部分开始-->
+<div class="i_body">
+    <div class="xzjs_xq middle clear">
+        <div class="container_left fl leftfix">
+            <div class="circle_ico_1"></div>
+            <div class="shorlin"></div>
+            <div class="container_left_bt">建设流程</div>
+            <div class="circle_ico_2"></div>
+            <div class="longline">
+                <div class="jianshe_list">
+                    <div><a href="##"><img src="images/xq_tip1.png" alt="">概念区别</a></div>
+                    <div><a href="##"><img src="images/xq_tip2.png" alt="">政策解读</a></div>
+                    <div><a href="##"><img src="images/xq_tip3.png" alt="">小镇体捡</a></div>
+                    <div><a href="##"><img src="images/xq_tip4.png" alt="">规划咨询</a></div>
+                    <div><a href="##"><img src="images/xq_tip5.png" alt="">小镇申报</a></div>
+                    <div><a href="##"><img src="images/xq_tip6.png" alt="">招商引资</a></div>
+                    <div><a href="##"><img src="images/xq_tip7.png" alt="">建设运营</a></div>
+                    <div><a href="##"><img src="images/xq_tip8.png" alt="">小镇评价</a></div>
+                </div>
+                <div class="circle_ico_3"></div>
+                <div class="nav_mark"><img src="images/jiantou.png" alt=""></div>
+            </div>
+        </div>
+        <div class="container_right fr clear">
+            <div class="container_right_list" style="display: block;">
+                <div class="tip1_table_head clear">
+                    <div>名称</div><div>特色小镇</div><div>特色小城镇</div>
+                </div>
+                <ul>
+                    <li class="clear">
+                        <div>概念</div>
+                        <div>特色小镇主要指聚焦特色产业和新兴产业，集聚发展要素，不同于行政建制镇和产业园区的创新创业平台。<br><br>
+                            特色小镇是相对独立于市区，具有明确产业定位、文化内涵、旅游和一定社区功能的发展空间平台，区别于行政区划单元和产业园区。</div>
+                        <div>特色小城镇是指以传统行政区划为单元，特色产业鲜明、具有一定人口和经济规模的建制镇。<br><br>
+                            一般指城乡地域中地理位置重要、资源优势独特、经济规模较大、产业相对集中、建筑特色明显、地域特征突出、历史文化保存相对完整的乡镇。</div>
+                    </li>
+                    <li class="clear">
+                        <div>主管单位</div>
+                        <div>国家发改委</div>
+                        <div>住建部</div>
+                    </li>
+                    <li class="clear">
+                        <div>提出背景</div>
+                        <div>经济转型升级 <br>
+                            城乡统筹发展 <br>
+                            供给侧结构性改革</div>
+                        <div>新型城镇化建设 <br>
+                            新农村建设</div>
+                    </li>
+                    <li class="clear">
+                        <div>面积</div>
+                        <div>规划面积控制在3km²（建设面积控制在1km²）</div>
+                        <div>整个镇区（一般为20km²）</div>
+                    </li>
+                    <li class="clear">
+                        <div>产业类型</div>
+                        <div>以新兴产业为主，传统产业为辅</div>
+                        <div>以传统产业为主，新兴产业为辅</div>
+                    </li>
+                    <li class="clear">
+                        <div>运作方式</div>
+                        <div>政府引导 <br>
+                            企业主体 <br>
+                            市场化运作</div>
+                        <div>政府资金支持 <br>
+                            统筹城乡一体化 <br>
+                            规划引领建设</div>
+                    </li>
+                    <li class="clear">
+                        <div  class="anli"><p>案例</p></div>
+                        <div>
+                            <a href="##">
+                                <span>诸暨袜艺小镇</span>
+                                <span>特色小镇</span>
+                                <span>绍兴市诸暨市</span>
+                            </a>
+                        </div>
+                        <div><a href="##">
+                            <span>诸暨袜艺小镇</span>
+                            <span>特色小镇</span>
+                            <span>绍兴市诸暨市</span>
+                        </a></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="container_right_list">
+                <img src="images/nei_zc.jpg" alt="">
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">小镇体检</div>
+                        <p>小镇体检是特色小镇大数据研究中心针对特色小镇创建而开发的一套评估特色小镇综合发展能力的产品，帮
+                            助特色小镇找到问题和优势，扬长避短，为特色小镇创建和健康发展提供参考。<br>
+                            <br>
+                            小镇体检评价体系由同济大学、浙江省发展规划研究院、特色小镇大数据研究中心等专家共同建立。该体
+                            系从特色小镇基础建设、产业特色、企业发展、社会贡献、支撑保障等方面，以全国所有的特色小镇大数
+                            据为背景数据，参考对比浙江省特色小镇考核体系、全国特色小镇申报标准等多重考核体系来对小镇进行
+                            综合全面的检查评价。</p>
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">体检流程</div>
+                    <img src="images/tjlc_img.png" alt="">
+                </div>
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">规划咨询</div>
+                    <p>小镇体检是特色小镇大数据研究中心针对特色小镇创建而开发的一套评估特色小镇综合发展能力的产品，帮
+                        助特色小镇找到问题和优势，扬长避短，为特色小镇创建和健康发展提供参考。<br>
+                        <br>
+                        小镇体检评价体系由同济大学、浙江省发展规划研究院、特色小镇大数据研究中心等专家共同建立。该体
+                        系从特色小镇基础建设、产业特色、企业发展、社会贡献、支撑保障等方面，以全国所有的特色小镇大数
+                        据为背景数据，参考对比浙江省特色小镇考核体系、全国特色小镇申报标准等多重考核体系来对小镇进行
+                        综合全面的检查评价。</p>
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">案例介绍</div>
+                    <img src="images/tjlc_img.png" alt="">
+                </div>
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <img src="images/xzsb_img.png" alt="">
+                </div>
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">招商引资</div>
+                    <p>招商引资对特色小镇建设和发展来说，具有重要作用。<br>
+                        特色小镇网把特色小镇的招商引资分为三大类型：<br>
+                        1、小镇级招商（一级招商）<br>
+                        这类招商的目标是招大型的投资开发商，投资开发商需要参与到整个小镇的规划建设中来。招商主体一般是政府，政府把整个小镇地块划拨出来，让具有实力的企业来开发建设或者运营。<br>
+                        2、地块级招商（二级招商）<br>
+                        地块级招商是指把小镇划分成若干项目地块后，按照地块招入驻企业或者运营商。<br>
+                        3、楼宇商铺招商（三级招商）<br>
+                        楼宇商铺招商是指将已经建成的楼宇（厂房、办公楼、商场等）以租赁或者售卖的方式给目标客户群。<br>
+                        目前，特色小镇招商引资多集中在一级招商和二级招商阶段。<br>
+                        <br>
+                        传统的招商引资方式有会展招商、驻点招商等，往往投入大、收效低。<br>
+                        <br>
+                        特色小镇网根据目前小镇招商引资的特点，借助互联网、大数据、新媒体营销等技术和方法，为特色小镇一级和二级招商开辟了一条成本低、效率高的新途径。</p>
+                </div>
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">建设运营</div>
+                    <p>特色小镇最关键的是能够因地制宜，根据小镇自身发展情况找准产业定位，并找到好的运营模式，从而能够为
+                        小镇的发展奠定基础。 特色小镇建设明确提出要“政府引导、企业主体、市场化运作”。理解起来，就是政府
+                        要搭建平台，提供服务，负责小镇的定位、规划、基础设施和监管治理；企业要作为特色小镇建设的主体，通过
+                        市场化手段引进企业和社会资本来建设特色小镇。 特色小镇的运营模式有以下三种：<br>
+                        1、政府主导：政府建设、市场招商，政府成立国资公司，根据产业定位面向全国招商。<br>
+                        2、企业主导：企业主体，政府服务，政府负责小镇的定位、规划、基础设施和审批服务，引进民营企业建设特色小镇。<br>
+                        3、政企合营：政企合作、联动建设，政府做好大规划，联手大企业培育大产业。<br>
+                        无论是哪种运营模式，最终都需要一个运营主体（企业）来对小镇进行运营。作为专业的特色小镇建设服务平台，
+                        我们能够为特色小镇寻找合适的服务商，让专业的团队做专业的事情。</p>
+                </div>
+            </div>
+            <div class="container_right_list">
+                <div class="jslc_nr">
+                    <div style="font-size: 20px;color: #5a5a5a;margin: 20px 0;">小镇评价</div>
+                    <p>特色小镇大数据研究中心针对特色小镇，结合浙江省特色小镇创建指南以及评价考核体系，得出了一套适用于特
+                        色小镇的评价指标体系，分别从基础设施建设、产业政策扶持、企业发展价值、社会贡献能力、支撑保障体系
+                        等5个大方面53个小类对特色小镇进行综合评价。</p>
+                    <img src="images/xzpj_img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--footer部分开始-->
+<footer>
+    <div class="footer">
+        <div class="middle clear">
+            <div class="footer_left fl">
+                <div class="footer_nav">
+                    <a href="##">关于我们</a>
+                    <a href="##">友情链接</a>
+                    <a href="##">网站律师</a>
+                    <a href="##">免责申明</a>
+                    <a href="##">专家团队</a>
+                    <a href="##">网站地图</a>
+                </div>
+                <div class="footer_bq">
+                    <p>Copyright © 2015 知略科技. All rights reserved.</p>
+                    <p><a href="javascript:void (0);">浙ICP备16027131号</a></p>
+                </div>
+            </div>
+            <div class="footer_right fr">
+                <img src="images/footer-scan-weixin.png" width="60" height="60" alt="二维码">
+                <p>扫描关注微信公众号</p>
+            </div>
+        </div>
+    </div>
+    <div class="xuanfu">
+        <div class="xf_phone xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-phone"></i></div>
+            <div class="xf_phone_wz">联系<br>方式</div>
+            <div class="xf_phone_img"><img src="images/lxfs.png" alt=""></div>
+        </div>
+        <div class="xf_qs xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-question"></i></div>
+            <div class="xf_phone_wz">问题<br>反馈</div>
+        </div>
+        <div class="xf_gotop xf_box">
+            <div class="xf_phone_tb"><i class="icon iconfont icon-dingbu"></i></div>
+            <div class="xf_phone_wz">回到<br>顶部</div>
+        </div>
+    </div>
+</footer>
+<!--footer部分结束-->
+<!--主体部分结束-->
+<!--js代码调用开始-->
+<script>
+    $(document).ready(function() {
+        var aLogin=document.getElementsByClassName('btn_login');
+        var aZhuce=document.getElementsByClassName('btn_zhuce');
+        var fankui=document.getElementsByClassName('xf_qs')[0];
+
+        for(var i=0;i<aLogin.length;i++){
+            aLogin[i].onclick=function () {
+                openDialog('login', 'login_close');
+            };
+        }
+        for(var j=0;j<aZhuce.length;j++){
+            aZhuce[j].onclick=function () {
+                openDialog('zhuce', 'login_close');
+            };
+        }
+        fankui.onclick=function () {
+            openDialog('fankui', 'close');
+        };
+        aZhuceJs();
+
+        xuanfu();
+        jeTab();
+    });
+</script>
+<!--js代码调用结束-->
+</body>
+</html>
